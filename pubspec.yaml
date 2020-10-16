@@ -1,0 +1,32 @@
+name: udemyClone
+description: An E-Learning Mobile App.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cloud_firestore: ^0.14.1+3
+  cupertino_icons: ^0.1.3
+  eva_icons_flutter: ^2.0.1
+  firebase_auth: ^0.18.1+2
+  firebase_core: ^0.5.0+1
+  font_awesome_flutter: ^8.10.0
+  google_sign_in: ^4.5.4
+  page_transition: ^1.1.7+2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - images/logo.png
+    - images/landingPageBg.png
+    - images/sale.jpg
+    - images/sale1.png
+
+  uses-material-design: true

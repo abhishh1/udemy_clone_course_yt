@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "691000445212",
+    "firebase_url": "https://udemyclone-f440e.firebaseio.com",
+    "project_id": "udemyclone-f440e",
+    "storage_bucket": "udemyclone-f440e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691000445212:android:adb5def2eaa935cfb792d9",
+        "android_client_info": {
+          "package_name": "com.example.udemyClone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691000445212-mirngn1c4ea8t9f9truf9ag6f4l2768m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.udemyClone",
+            "certificate_hash": "4d41196fd62eeb24dd231a29dd1806541a9f396c"
+          }
+        },
+        {
+          "client_id": "691000445212-avfqoi9g4kab5r4j8me0set1b1rnfasr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcB8UaVl3pltq1hqVZ3U6WpEKQGQWOOZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691000445212-avfqoi9g4kab5r4j8me0set1b1rnfasr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
