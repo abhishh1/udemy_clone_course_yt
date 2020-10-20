@@ -1,4 +1,5 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:udemyClone/Screens/Homescreens/Account.dart';
 import 'package:udemyClone/Screens/Homescreens/Featured.dart';
@@ -14,6 +15,8 @@ class Homescreen extends StatefulWidget {
 class _HomescreenState extends State<Homescreen> {
   PageController pageController = new PageController();
   int currentIndex = 0;
+  FirebaseMessaging _firebaseMessaging;
+  String _message;
 
   void onTap(int page) {
     setState(() {
@@ -21,6 +24,33 @@ class _HomescreenState extends State<Homescreen> {
     });
     pageController.jumpToPage(page);
   }
+
+  /*@override
+  void initState() {
+    _firebaseMessaging.configure(
+        onLaunch: (Map<String, dynamic> message) async {
+      setState(() {
+        _message = message['title'];
+      });
+      print(_message);
+    }, onResume: (Map<String, dynamic> message) async {
+      setState(() {
+        _message = message['title'];
+      });
+      print(_message);
+    }, onMessage: (Map<String, dynamic> message) async {
+      setState(() {
+        _message = message['title'];
+      });
+      print(_message);
+    });
+
+    _firebaseMessaging.getToken().then((value) {
+      print(value);
+    });
+
+    super.initState();
+  }*/
 
   @override
   Widget build(BuildContext context) {

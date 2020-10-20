@@ -14,9 +14,18 @@ dependencies:
   eva_icons_flutter: ^2.0.1
   firebase_auth: ^0.18.1+2
   firebase_core: ^0.5.0+1
+  firebase_messaging: ^7.0.3
+  flutter_launcher_icons: ^0.8.1
+  flutter_switch: ^0.1.3
   font_awesome_flutter: ^8.10.0
-  google_sign_in: ^4.5.4
+  get: ^3.13.2
+  google_sign_in: null
   page_transition: ^1.1.7+2
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "images/appIcon.png"
 
 dev_dependencies:
   flutter_test:
@@ -28,5 +37,6 @@ flutter:
     - images/landingPageBg.png
     - images/sale.jpg
     - images/sale1.png
+    - images/appIcon.png
 
   uses-material-design: true

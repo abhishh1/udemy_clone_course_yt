@@ -2,7 +2,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:udemyClone/Screens/HomeScreen.dart';
+import 'package:udemyClone/HomeScreen.dart';
 import 'package:udemyClone/Screens/signinoptions/signUp..dart';
 import 'package:udemyClone/Services/Authentication.dart';
 
