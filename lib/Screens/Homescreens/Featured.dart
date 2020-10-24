@@ -1,8 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:udemyClone/Screens/DetailSection/DetailedScreen.dart';
 import 'package:udemyClone/Screens/MyList.dart';
 import 'package:udemyClone/Services/DataController.dart';
 
@@ -82,114 +82,142 @@ class _FeaturedState extends State<Featured> {
                           scrollDirection: Axis.horizontal,
                           itemCount: snapshot.data.length,
                           itemBuilder: (BuildContext context, int index) {
-                            return Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                      height: 100.0,
-                                      width: 200.0,
-                                      decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              fit: BoxFit.fitWidth,
-                                              image: NetworkImage(snapshot
-                                                  .data[index]
-                                                  .data()['image']))),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 8.0),
-                                      child: Container(
-                                        constraints:
-                                            BoxConstraints(maxWidth: 220.0),
-                                        child: Text(
-                                          snapshot.data[index].data()['title'],
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18.0),
-                                        ),
+                            return GestureDetector(
+                              onTap: () {
+                                Get.to(DetailedScreen(),
+                                    transition: Transition.leftToRightWithFade,
+                                    arguments: snapshot.data[index]);
+                                print(snapshot.data[index].data()['title']);
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        height: 100.0,
+                                        width: 200.0,
+                                        decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                                fit: BoxFit.fitWidth,
+                                                image: NetworkImage(snapshot
+                                                    .data[index]
+                                                    .data()['image']))),
                                       ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 8.0),
-                                      child: Text(
-                                        snapshot.data[index].data()['author'],
-                                        style: TextStyle(
-                                            color: Colors.grey.shade600,
-                                            fontSize: 12.0),
-                                      ),
-                                    ),
-                                    Row(
-                                      children: [
-                                        Icon(EvaIcons.star,
-                                            color: Colors.yellowAccent),
-                                        Icon(EvaIcons.star,
-                                            color: Colors.yellowAccent),
-                                        Icon(EvaIcons.star,
-                                            color: Colors.yellowAccent),
-                                        Icon(EvaIcons.star,
-                                            color: Colors.yellowAccent),
-                                        Icon(EvaIcons.star,
-                                            color: Colors.yellowAccent),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 4.0),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 8.0),
+                                        child: Container(
+                                          constraints:
+                                              BoxConstraints(maxWidth: 220.0),
                                           child: Text(
                                             snapshot.data[index]
-                                                .data()['ratings'],
-                                            style: TextStyle(
-                                                color: Colors.grey.shade600,
-                                                fontSize: 16.0),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 8.0),
-                                          child: Text(
-                                            ('(${snapshot.data[index].data()['enrolled']})'),
-                                            style: TextStyle(
-                                                color: Colors.grey.shade600,
-                                                fontSize: 16.0),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 4.0),
-                                      child: Row(
-                                        children: [
-                                          Icon(FontAwesomeIcons.rupeeSign,
-                                              color: Colors.white),
-                                          Text(
-                                            snapshot.data[index]
-                                                .data()['price'],
+                                                .data()['title'],
                                             style: TextStyle(
                                                 color: Colors.white,
-                                                fontSize: 22.0),
+                                                fontSize: 18.0),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 8.0),
+                                        child: Text(
+                                          snapshot.data[index].data()['author'],
+                                          style: TextStyle(
+                                              color: Colors.grey.shade600,
+                                              fontSize: 12.0),
+                                        ),
+                                      ),
+                                      Row(
+                                        children: [
+                                          Icon(EvaIcons.star,
+                                              color: Colors.yellowAccent),
+                                          Icon(EvaIcons.star,
+                                              color: Colors.yellowAccent),
+                                          Icon(EvaIcons.star,
+                                              color: Colors.yellowAccent),
+                                          Icon(EvaIcons.star,
+                                              color: Colors.yellowAccent),
+                                          Icon(EvaIcons.star,
+                                              color: Colors.yellowAccent),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                left: 4.0),
+                                            child: Text(
+                                              snapshot.data[index]
+                                                  .data()['ratings'],
+                                              style: TextStyle(
+                                                  color: Colors.grey.shade600,
+                                                  fontSize: 16.0),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                left: 8.0),
+                                            child: Text(
+                                              ('(${snapshot.data[index].data()['enrolled']})'),
+                                              style: TextStyle(
+                                                  color: Colors.grey.shade600,
+                                                  fontSize: 16.0),
+                                            ),
                                           ),
                                         ],
                                       ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 4.0),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          color: Colors.yellow,
-                                        ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text('Bestseller',
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 4.0),
+                                        child: Row(
+                                          children: [
+                                            Icon(FontAwesomeIcons.rupeeSign,
+                                                color: Colors.white),
+                                            Text(
+                                              snapshot.data[index]
+                                                  .data()['price'],
                                               style: TextStyle(
-                                                  color: Colors.brown,
-                                                  fontWeight: FontWeight.bold)),
+                                                  color: Colors.white,
+                                                  fontSize: 22.0),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 4.0),
+                                              child: Text(
+                                                snapshot.data[index]
+                                                    .data()['notPrice'],
+                                                style: TextStyle(
+                                                    decoration: TextDecoration
+                                                        .lineThrough,
+                                                    color: Colors.grey.shade600,
+                                                    fontSize: 18.0),
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                    )
-                                  ],
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 4.0),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            color: Colors.yellow,
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Text('Bestseller',
+                                                style: TextStyle(
+                                                    color: Colors.brown,
+                                                    fontWeight:
+                                                        FontWeight.bold)),
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             );

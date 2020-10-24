@@ -20,7 +20,7 @@ class Authentication {
     assert(user.email != null);
     print(user.displayName);
     print(user.email);
-
+    print(user.refreshToken);
     final User currentUser = _firebaseAuth.currentUser;
     assert(currentUser.uid == user.uid);
 

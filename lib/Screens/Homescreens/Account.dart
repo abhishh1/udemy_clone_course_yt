@@ -4,6 +4,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:udemyClone/Screens/landingPage.dart';
 import 'package:udemyClone/Services/Authentication.dart';
 
+//Deatileddescription
 class Account extends StatefulWidget {
   @override
   _AccountState createState() => _AccountState();
