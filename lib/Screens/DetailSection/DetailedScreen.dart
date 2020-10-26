@@ -10,6 +10,7 @@ class DetailedScreen extends StatefulWidget {
 }
 
 class _DetailedScreenState extends State<DetailedScreen> {
+  List<dynamic> dataB;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -314,6 +315,92 @@ class _DetailedScreenState extends State<DetailedScreen> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 15.0),
+                child: Container(
+                  //color: Colors.grey.shade600,
+                  decoration: BoxDecoration(
+                      color: Colors.grey.shade900,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: ExpansionTile(
+                    //backgroundColor: Colors.blueGrey.shade700,
+                    childrenPadding: const EdgeInsets.all(10),
+                    title: Text('Description',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.grey.shade200)),
+                    children: [
+                      Text(Get.arguments['des'],
+                          style: TextStyle(
+                              color: Colors.grey.shade600,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18)),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 15.0),
+                child: Container(
+                  //color: Colors.grey.shade600,
+                  decoration: BoxDecoration(
+                      color: Colors.grey.shade900,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: ExpansionTile(
+                    onExpansionChanged: (v) {
+                      setState(() {
+                        List<dynamic> data = Get.arguments['learn'];
+                        data = dataB;
+                      });
+                      print(dataB);
+                    },
+                    //backgroundColor: Colors.blueGrey.shade700,
+                    childrenPadding: const EdgeInsets.all(10),
+                    title: Text('Requirements',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.grey.shade200)),
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Icon(
+                            Icons.ring_volume,
+                            color: Colors.blueAccent,
+                          ),
+                          Text(Get.arguments['Requirements'],
+                              style: TextStyle(
+                                  color: Colors.grey.shade600,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18)),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey.shade900,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: ListTile(
+                    title: Text('Curriculum',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.grey.shade200)),
+                    subtitle: Text(Get.arguments['curriculum'],
+                        style: TextStyle(
+                            color: Colors.grey.shade600,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14)),
+                  ),
                 ),
               )
             ],
