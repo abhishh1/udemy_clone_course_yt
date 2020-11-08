@@ -259,18 +259,25 @@ class _DetailedScreenState extends State<DetailedScreen> {
                       ),
                     ),
                   ),
-                  Container(
-                    width: 400.0,
-                    height: 50.0,
-                    decoration: BoxDecoration(
-                        color: Colors.redAccent.shade200,
-                        borderRadius: BorderRadius.circular(10.0)),
-                    child: Center(
-                      child: Text('Buy Now',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 24.0,
-                              fontWeight: FontWeight.bold)),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(DetailedScreen(),
+                          arguments: Get.arguments['title'],
+                          transition: Transition.leftToRight);
+                    },
+                    child: Container(
+                      width: 400.0,
+                      height: 50.0,
+                      decoration: BoxDecoration(
+                          color: Colors.redAccent.shade200,
+                          borderRadius: BorderRadius.circular(10.0)),
+                      child: Center(
+                        child: Text('Buy Now',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 24.0,
+                                fontWeight: FontWeight.bold)),
+                      ),
                     ),
                   ),
                   Padding(
